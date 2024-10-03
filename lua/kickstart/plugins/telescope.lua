@@ -1,4 +1,4 @@
-return { -- Fuzzy Finder (files, lsp, etc)
+return {
   'nvim-telescope/telescope.nvim',
   event = 'VimEnter',
   branch = '0.1.x',
@@ -23,38 +23,67 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- Useful for getting pretty icons, but requires a Nerd Font.
     { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
   },
-  config = function()
-    -- Telescope is a fuzzy finder that comes with a lot of different things that
-    -- it can fuzzy find! It's more than just a "file finder", it can search
-    -- many different aspects of Neovim, your workspace, LSP, and more!
-    --
-    -- The easiest way to use Telescope, is to start by doing something like:
-    --  :Telescope help_tags
-    --
-    -- After running this command, a window will open up and you're able to
-    -- type in the prompt window. You'll see a list of `help_tags` options and
-    -- a corresponding preview of the help.
-    --
-    -- Two important keymaps to use while in Telescope are:
-    --  - Insert mode: <c-/>
-    --  - Normal mode: ?
-    --
-    -- This opens a window that shows you all of the keymaps for the current
-    -- Telescope picker. This is really useful to discover what Telescope can
-    -- do as well as how to actually do it!
 
-    -- [[ Configure Telescope ]]
-    -- See `:help telescope` and `:help telescope.setup()`
-    require('telescope').setup {
-      -- You can put your default mappings / updates / etc. in here
-      --  All the info you're looking for is in `:help telescope.setup()`
-      --
-      -- defaults = {
-      --   mappings = {
-      --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-      --   },
-      -- },
-      -- pickers = {}
+  config = function()
+    local telescope = require 'telescope'
+    local actions = require 'telescope.actions'
+    local actions_layout = require 'telescope.actions.layout'
+    local telescope_config = require 'telescope.config'
+
+    -- Clone the default Telescope configuration
+    local vimgrep_arguments = { unpack(telescope_config.values.vimgrep_arguments) }
+
+    -- I want to search in hidden/dot files.
+    table.insert(vimgrep_arguments, '--hidden')
+    -- I don't want to search in the `.git` directory.
+    table.insert(vimgrep_arguments, '--glob')
+    table.insert(vimgrep_arguments, '!**/.git/*')
+
+    telescope.setup {
+      defaults = {
+        vimgrep_arguments = vimgrep_arguments,
+        mappings = {
+          n = {
+            ['<M-p>'] = actions_layout.toggle_preview,
+          },
+          i = {
+            ['<esc>'] = actions.close,
+            ['<C-d>'] = actions.delete_buffer + actions.move_to_top,
+            ['<M-p>'] = actions_layout.toggle_preview,
+            ['<C-s>'] = actions.cycle_previewers_next,
+            ['<C-a>'] = actions.cycle_previewers_prev,
+          },
+        },
+        preview = {
+          mime_hook = function(filepath, bufnr, opts)
+            local is_image = function(filepath)
+              local image_extensions = { 'png', 'jpg' } -- Supported image formats
+              local split_path = vim.split(filepath:lower(), '.', { plain = true })
+              local extension = split_path[#split_path]
+              return vim.tbl_contains(image_extensions, extension)
+            end
+            if is_image(filepath) then
+              local term = vim.api.nvim_open_term(bufnr, {})
+              local function send_output(_, data, _)
+                for _, d in ipairs(data) do
+                  vim.api.nvim_chan_send(term, d .. '\r\n')
+                end
+              end
+              vim.fn.jobstart({
+                'catimg',
+                filepath, -- Terminal image viewer command
+              }, { on_stdout = send_output, stdout_buffered = true, pty = true })
+            else
+              require('telescope.previewers.utils').set_preview_message(bufnr, opts.winid, 'Binary cannot be previewed')
+            end
+          end,
+        },
+      },
+      pickers = {
+        find_files = {
+          find_command = { 'rg', '--files', '--hidden', '--glob', '!**/.git/*' },
+        },
+      },
       extensions = {
         ['ui-select'] = {
           require('telescope.themes').get_dropdown(),
