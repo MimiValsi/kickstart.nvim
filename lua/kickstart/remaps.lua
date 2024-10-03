@@ -24,6 +24,8 @@ map('i', '<C-l>', '<right>', { desc = 'Move focus to the right window' })
 map('i', '<C-j>', '<down>', { desc = 'Move focus to the lower window' })
 map('i', '<C-k>', '<up>', { desc = 'Move focus to the upper window' })
 
+map('i', 'jk', '<esc>', { desc = 'Swap exit Insert mode' })
+
 map('i', '<C-b>', '<ESC>^i', { desc = 'Go to begining of line' })
 map('i', '<C-e>', '<End>', { desc = 'Go to end of line' })
 
@@ -34,6 +36,8 @@ map('v', 'J', ":m '>+1<CR>gv=gv", {
 map('v', 'K', ":m '<-2<CR>gv=gv", {
   desc = [[make the selected hightlighted line and go up one line, indent if possible and highlight it again]],
 })
+
+map('v', 'sd', '<esc>', { desc = 'Swap exit Visual mode' })
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
