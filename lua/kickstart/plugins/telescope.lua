@@ -41,6 +41,7 @@ return {
 
     telescope.setup {
       defaults = {
+        file_ignore_patterns = { '%.o', '%.git', '%vgcore' },
         vimgrep_arguments = vimgrep_arguments,
         mappings = {
           n = {
