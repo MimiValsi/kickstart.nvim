@@ -180,6 +180,8 @@ return {
         },
       },
 
+      yamlls = {},
+
       clangd = {
         filetypes = { 'c', 'cpp' },
       },
