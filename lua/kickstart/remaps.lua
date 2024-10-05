@@ -23,6 +23,9 @@ map('n', '<leader>V', ':vert terminal<cr>', { desc = 'Open vertical in vertical 
 
 map('n', '<leader>v', ':vsplit<cr>', { desc = 'Vertical split' })
 
+map('n', '<leader>y', '"+y', { desc = 'Yank to system clipboard' })
+map('n', '<leader>p', '"+p', { desc = 'Paste from system clipboard' })
+
 map('i', '<C-h>', '<left>', { desc = 'Move focus to the left window' })
 map('i', '<C-l>', '<right>', { desc = 'Move focus to the right window' })
 map('i', '<C-j>', '<down>', { desc = 'Move focus to the lower window' })
