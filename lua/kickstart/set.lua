@@ -1,3 +1,5 @@
+local autocmd = vim.api.nvim_create_autocmd
+
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -66,3 +68,13 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+
+autocmd('FileType', {
+  pattern = { 'html', 'javascript', 'tex' },
+
+  callback = function()
+    vim.opt.matchpairs = '(:),{:},[:],<:>' -- added '<:>' for html
+    vim.opt.shiftround = true -- round indent to multiple of 'shiftwidth'
+    vim.opt.shiftwidth = 2
+  end,
+})
