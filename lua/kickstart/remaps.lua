@@ -17,6 +17,8 @@ map('n', ';', ':', { desc = 'Swap cmd shortcut' })
 map('n', '<tab>', ':tabn<cr>', { desc = 'Go to next tab' })
 map('n', '<S-tab>', ':tabp<cr>', { desc = 'Go to prev tab' })
 
+map('n', '<leader>ra', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>', { desc = 'replace the word everywhere in the file/buffer' })
+
 map('n', 'Q', ':noh<cr>', { desc = 'Disable Q and cleans mini buffer from messages' })
 
 map('n', '<leader>V', ':vert terminal<cr>', { desc = 'Open vertical in vertical split' })
