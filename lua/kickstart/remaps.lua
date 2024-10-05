@@ -19,6 +19,10 @@ map('n', '<S-tab>', ':tabp<cr>', { desc = 'Go to prev tab' })
 
 map('n', 'Q', ':noh<cr>', { desc = 'Disable Q and cleans mini buffer from messages' })
 
+map('n', '<leader>V', ':vert terminal<cr>', { desc = 'Open vertical in vertical split' })
+
+map('n', '<leader>v', ':vsplit<cr>', { desc = 'Vertical split' })
+
 map('i', '<C-h>', '<left>', { desc = 'Move focus to the left window' })
 map('i', '<C-l>', '<right>', { desc = 'Move focus to the right window' })
 map('i', '<C-j>', '<down>', { desc = 'Move focus to the lower window' })
@@ -47,4 +51,4 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
-map('t', '<CkSpace><C-Space>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+map('t', '<C- >', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
