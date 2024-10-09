@@ -170,6 +170,8 @@ return {
 
       html = {},
 
+      ts_ls = {},
+
       yamlls = {},
 
       clangd = {
