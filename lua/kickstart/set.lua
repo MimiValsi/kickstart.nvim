@@ -40,6 +40,8 @@ end)
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
 
+vim.opt.preserveindent = true
+
 vim.opt.relativenumber = true
 
 -- Don't show the mode, since it's already in the status line
@@ -48,10 +50,13 @@ vim.opt.showmode = false
 -- Keep signcolumn on by default
 vim.opt.signcolumn = 'yes'
 vim.opt.smartcase = true
+vim.opt.smartindent = true
 
 -- Configure how new splits should be opened
 vim.opt.splitright = true
 vim.opt.splitbelow = true
+
+vim.opt.swapfile = false -- disabled
 
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
@@ -76,5 +81,15 @@ autocmd('FileType', {
     vim.opt.matchpairs = '(:),{:},[:],<:>' -- added '<:>' for html
     vim.opt.shiftround = true -- round indent to multiple of 'shiftwidth'
     vim.opt.shiftwidth = 2
+  end,
+})
+
+autocmd('FileType', {
+  pattern = 'go',
+
+  callback = function()
+    vim.opt.shiftround = true
+    vim.opt.shiftwidth = 8
+    vim.opt.expandtab = false
   end,
 })
