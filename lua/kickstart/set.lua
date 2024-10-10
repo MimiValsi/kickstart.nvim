@@ -37,6 +37,8 @@ vim.schedule(function()
   vim.opt.clipboard = 'unnamed'
 end)
 
+vim.opt.guicursor = 'a:blinkon200'
+
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
 
