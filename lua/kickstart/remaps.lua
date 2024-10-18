@@ -13,6 +13,7 @@ map('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 map('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 map('n', '<leader>ww', ':w<cr>', { desc = 'Save file' })
+map('n', '<leader>ww', ':wq<cr>', { desc = 'Save file' })
 map('n', '<leader>we', ':q<cr>', { desc = 'Quit file' })
 
 map('n', ';', ':', { desc = 'Cmd shortcut' })
