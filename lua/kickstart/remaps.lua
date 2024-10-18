@@ -13,13 +13,13 @@ map('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 map('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 map('n', '<leader>ww', ':w<cr>', { desc = 'Save file' })
-map('n', '<leader>ww', ':wq<cr>', { desc = 'Save file' })
+map('n', '<leader>wq', ':wq<cr>', { desc = 'Save file' })
 map('n', '<leader>we', ':q<cr>', { desc = 'Quit file' })
 
 map('n', ';', ':', { desc = 'Cmd shortcut' })
 
-map('n', '<C-o>', ':tabn<cr>', { desc = 'Go to next tab' })
-map('n', '<C-i>', ':tabp<cr>', { desc = 'Go to prev tab' })
+map('n', '<C-i>', ':tabn<cr>', { desc = 'Go to next tab' })
+map('n', '<C-o>', ':tabp<cr>', { desc = 'Go to prev tab' })
 map('n', '<leader>t', ':tab ter<cr>', { desc = 'New tab with terminal' })
 
 map('n', '<leader>ra', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>', { desc = 'replace the word everywhere in the file/buffer' })
