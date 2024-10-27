@@ -77,7 +77,7 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
 autocmd('FileType', {
-  pattern = { 'html', 'javascript', 'tex' },
+  pattern = { 'html', 'javascript', 'tex', 'sql' },
 
   callback = function()
     vim.opt.matchpairs = '(:),{:},[:],<:>' -- added '<:>' for html

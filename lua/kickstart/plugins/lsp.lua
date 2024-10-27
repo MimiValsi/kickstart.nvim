@@ -168,6 +168,8 @@ return {
         },
       },
 
+      sqlls = {},
+
       html = {},
 
       ts_ls = {},

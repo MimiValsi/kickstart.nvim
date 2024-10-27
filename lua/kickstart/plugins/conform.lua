@@ -37,6 +37,7 @@ return { -- Autoformat
       python = { 'black' },
       javascript = { 'prettier' },
       html = { 'prettier' },
+      sql = { 'sqlfmt' },
     },
   },
 }
