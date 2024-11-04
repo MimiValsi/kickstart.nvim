@@ -182,6 +182,8 @@ return {
 
       cssls = {},
 
+      zls = {},
+
       lua_ls = {
         -- cmd = {...},
         -- filetypes = { ...},
