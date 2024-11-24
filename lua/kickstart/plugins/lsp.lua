@@ -176,6 +176,8 @@ return {
 
       yamlls = {},
 
+      bashls = {},
+
       clangd = {
         filetypes = { 'c', 'cpp' },
       },
