@@ -30,6 +30,8 @@ map('n', '<leader>v', ':vsplit<cr>', { desc = 'Vertical split' })
 map('n', '<leader>y', '"+y', { desc = 'Yank to system clipboard' })
 map('n', '<leader>p', '"*p', { desc = 'Paste from system clipboard' })
 
+map('n', '<leader>d', '"_d', { desc = 'Delete to void register' })
+
 map('i', '<C-h>', '<left>', { desc = 'Move focus to the left window' })
 map('i', '<C-l>', '<right>', { desc = 'Move focus to the right window' })
 map('i', '<C-j>', '<down>', { desc = 'Move focus to the lower window' })
