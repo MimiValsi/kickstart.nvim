@@ -12,15 +12,12 @@ map('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 map('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 map('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
-map('n', '<leader>ww', ':w<cr>', { desc = 'Save file' })
-map('n', '<leader>wq', ':wq<cr>', { desc = 'Save file' })
-map('n', '<leader>we', ':q<cr>', { desc = 'Quit file' })
-
 map('n', ';', ':', { desc = 'Cmd shortcut' })
 
 map('n', '<C-i>', ':tabn<cr>', { desc = 'Go to next tab' })
 map('n', '<C-o>', ':tabp<cr>', { desc = 'Go to prev tab' })
-map('n', '<leader>t', ':tab ter<cr>', { desc = 'New tab with terminal' })
+map('n', '<leader>t', ':tab new<cr>', { desc = 'New tab' })
+map('n', '<leader>T', ':tab ter<cr>', { desc = 'New tab with terminal' })
 
 map('n', '<leader>ra', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>', { desc = 'replace the word everywhere in the file/buffer' })
 
@@ -31,7 +28,7 @@ map('n', '<leader>V', ':vert terminal<cr>', { desc = 'Open vertical in vertical 
 map('n', '<leader>v', ':vsplit<cr>', { desc = 'Vertical split' })
 
 map('n', '<leader>y', '"+y', { desc = 'Yank to system clipboard' })
-map('n', '<leader>p', '"+p', { desc = 'Paste from system clipboard' })
+map('n', '<leader>p', '"*p', { desc = 'Paste from system clipboard' })
 
 map('i', '<C-h>', '<left>', { desc = 'Move focus to the left window' })
 map('i', '<C-l>', '<right>', { desc = 'Move focus to the right window' })

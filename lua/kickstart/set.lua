@@ -38,9 +38,10 @@ vim.opt.number = true
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.schedule(function()
-  vim.opt.clipboard = 'unnamed'
+  vim.opt.clipboard = 'unnamed,unnamedplus'
 end)
 -- vim.opt.clipboard = 'unnamedplus'
+-- vim.opt.clipboard = 'unnamed'
 
 vim.opt.guicursor = 'n:blinkon200'
 
