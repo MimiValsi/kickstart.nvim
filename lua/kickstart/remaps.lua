@@ -61,4 +61,4 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
-map('t', '<C-c>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+map('t', '<C-c><C-d>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
