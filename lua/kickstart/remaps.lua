@@ -51,8 +51,6 @@ map('v', 'K', ":m '<-2<CR>gv=gv", {
   desc = [[make the selected hightlighted line and go up one line, indent if possible and highlight it again]],
 })
 
-map('v', 'sd', '<esc>', { desc = 'Exit Visual mode' })
-
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
