@@ -1,6 +1,8 @@
 local map = vim.keymap.set
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+map('n', '<leader>ch', '<cmd>ClangdSwitchSourceHeader<cr>', { desc = 'Switch Source/Header (C/C++)' })
+
 -- Diagnostic keymaps
 map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
