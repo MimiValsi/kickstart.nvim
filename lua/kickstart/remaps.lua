@@ -1,4 +1,5 @@
 local map = vim.keymap.set
+
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 map('n', '<leader>ch', '<cmd>ClangdSwitchSourceHeader<cr>', { desc = 'Switch Source/Header (C/C++)' })
@@ -61,4 +62,4 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
-map('t', '<C-c><C-d>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+map('t', '<C-j><C-k>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })

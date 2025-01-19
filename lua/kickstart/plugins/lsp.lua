@@ -174,6 +174,8 @@ return {
 
       ts_ls = {},
 
+      zls = {},
+
       yamlls = {},
 
       bashls = {},
