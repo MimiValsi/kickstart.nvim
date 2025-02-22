@@ -88,7 +88,7 @@ autocmd('FileType', {
 
   callback = function()
     vim.opt.matchpairs = '(:),{:},[:],<:>' -- added '<:>' for html
-    vim.opt.shiftround = true -- round indent to multiple of 'shiftwidth'
+    -- vim.opt.shiftround = true -- round indent to multiple of 'shiftwidth'
     vim.opt.shiftwidth = 2
   end,
 })
