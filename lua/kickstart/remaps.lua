@@ -43,7 +43,7 @@ map('i', '<C-l>', '<right>', { desc = 'Move focus to the right window' })
 map('i', '<C-j>', '<down>', { desc = 'Move focus to the lower window' })
 map('i', '<C-k>', '<up>', { desc = 'Move focus to the upper window' })
 
-map('i', 'jk', '<esc>', { desc = 'Exit Insert mode' })
+map('i', 'df', '<esc>', { desc = 'Exit Insert mode' })
 
 map('i', '<C-b>', '<ESC>^i', { desc = 'Go to begining of line' })
 map('i', '<C-e>', '<End>', { desc = 'Go to end of line' })
