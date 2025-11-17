@@ -26,7 +26,7 @@ return {
     -- Override the default mapping to also set the git directory
     -- This ensures the terminal opens (or toggles) in the root of the current git repo by searching for .git
     vim.keymap.set('n', '<C-k>', '<Cmd>ToggleTerm dir=git_dir<CR>', { silent = true, noremap = true })
-    vim.keymap.set('i', '<C-k>', '<Esc><Cmd>ToggleTerm dir=git_dir<CR>', { silent = true, noremap = true })
+    -- vim.keymap.set('i', '<C-k>', '<Esc><Cmd>ToggleTerm dir=git_dir<CR>', { silent = true, noremap = true })
     vim.keymap.set('t', '<C-k>', '<Cmd>ToggleTerm dir=git_dir<CR>', { silent = true, noremap = true })
 
     function _G.set_terminal_keymaps()
