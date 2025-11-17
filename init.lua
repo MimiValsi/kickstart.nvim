@@ -8,6 +8,7 @@ vim.g.have_nerd_font = false
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.mouse = 'a'
+vim.o.mousehide = true
 vim.o.showmode = false
 
 -- Sync clipboard between OS and Neovim.
@@ -33,6 +34,7 @@ vim.o.inccommand = 'split'
 vim.o.cursorline = true
 vim.o.scrolloff = 8
 vim.o.confirm = true
+vim.o.guicursor = 'a:block'
 
 -- [[ Basic Keymaps ]]
 function Map(mode, lhs, rhs, opts)
