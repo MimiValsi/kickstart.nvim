@@ -34,7 +34,8 @@ vim.o.inccommand = 'split'
 vim.o.cursorline = true
 vim.o.scrolloff = 8
 vim.o.confirm = true
-vim.o.guicursor = 'a:block'
+vim.o.guicursor = 'a:block-blinkwait175-blinkoff150-blinkon175'
+vim.o.guicursor = 'a:block,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175'
 
 -- [[ Basic Keymaps ]]
 function Map(mode, lhs, rhs, opts)
