@@ -34,7 +34,7 @@ vim.o.inccommand = 'split'
 vim.o.cursorline = true
 vim.o.scrolloff = 8
 vim.o.confirm = true
-vim.o.guicursor = 'a:block-blinkwait175-blinkoff150-blinkon175'
+-- vim.o.guicursor = 'a:block-blinkwait175-blinkoff150-blinkon175'
 vim.o.guicursor = 'a:block,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175'
 
 -- [[ Basic Keymaps ]]
@@ -66,10 +66,13 @@ Map('i', '<C-h>', '<left>')
 Map('i', '<C-j>', '<down>')
 Map('i', '<C-k>', '<up>')
 Map('i', '<C-l>', '<right>')
-Map('i', '<C-f>', '<right>')
 Map('i', '<C-e>', '<end>')
 Map('i', '<C-a>', '<esc>^i')
 Map('i', '<C-g>', '<esc>')
+Map('i', '<C-f>', '<C-o>w', { desc = 'Jump to beginning of new word' })
+Map('i', '<A-f>', '<C-o><S-w>', { desc = 'jump to next word after space' })
+Map('i', '<C-b>', '<C-o>b', { desc = 'Jump to beginning of prev word' })
+Map('i', '<A-b>', '<C-o><S-b>', { desc = 'jump to prev word after space' })
 
 Map('v', 'J', ":m '>+1<CR>gv=gv", {
   desc = 'make the selected hightlighted line and go up one line, indent if possible and highlight it again',
