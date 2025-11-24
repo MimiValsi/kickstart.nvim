@@ -65,14 +65,14 @@ Map('i', '<C-g>', '<cmd>noh<cr>')
 Map('i', '<C-h>', '<left>')
 Map('i', '<C-j>', '<down>')
 Map('i', '<C-k>', '<up>')
-Map('i', '<C-l>', '<right>')
+Map('i', '<C-f>', '<right>')
 Map('i', '<C-e>', '<end>')
 Map('i', '<C-a>', '<esc>^i')
 Map('i', '<C-g>', '<esc>')
-Map('i', '<C-f>', '<C-o>w', { desc = 'Jump to beginning of new word' })
-Map('i', '<A-f>', '<C-o><S-w>', { desc = 'jump to next word after space' })
+Map('i', '<C-l>', '<C-o>w', { desc = 'Jump to beginning of new word' })
+Map('i', '<C-;>', '<C-o><S-w>', { desc = 'jump to next word after space' })
 Map('i', '<C-b>', '<C-o>b', { desc = 'Jump to beginning of prev word' })
-Map('i', '<A-b>', '<C-o><S-b>', { desc = 'jump to prev word after space' })
+Map('i', '<C-d>', '<C-o><S-b>', { desc = 'jump to prev word after space' })
 
 Map('v', 'J', ":m '>+1<CR>gv=gv", {
   desc = 'make the selected hightlighted line and go up one line, indent if possible and highlight it again',
